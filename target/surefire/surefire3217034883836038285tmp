@@ -1,0 +1,8 @@
+#surefire
+#Tue Mar 28 15:52:24 CEST 2017
+maven.ext.class.path=C\:\\Users\\Andreas\\AppData\\Roaming\\NetBeans\\8.0.2\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Andreas\\Documents\\NetBeansProjects\\SeleniumTest_SP
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Andreas\\.m2\\repository
+basedir=C\:\\Users\\Andreas\\Documents\\NetBeansProjects\\SeleniumTest_SP
+test=SeleniumTest
