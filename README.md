@@ -37,6 +37,44 @@ driver = new ChromeDriver();
 driver.get("localhost:3000");
 ```
 
+Sending actions to the webpage is done by calling methods on the instance of the WebDriver object that is connected to the page. 
+
+```java
+driver.findElement(By.id("filter")).sendKeys("2002");
+```
+### Explain shortly about the DOM, and how you have read/manipulated DOM-elements in your test 
+
+The DOM is the markup that creates the entire structure of an HTML page. It's a collection of tags that function as containers for other tags or for content to be displayed on the webpage. These tags can be specified using CSS, and be assigning names, IDs and classes.
+
+I have read and manipulated the DOM in my tests by using the WebDriver methods that Selenium provides. Meaning that I have told the WebDriver to load the webpage, and then telling the driver to interact with different elements in the DOM through IDs etc.
+
+### Explain how (and why it was necessary) you have solved "waiting" problems in your test
+
+I used the code given in our first Selenium Example, which tells the WebDriver instance to wait either a set number of seconds, or for a condition to be fulfilled. The condition in this case is apply(), which means the page being fully loaded.
+
+```java
+(new WebDriverWait(driver, 3)).until(new ExpectedCondition<Boolean>() {
+            public Boolean apply(WebDriver wd) {
+                
+            }
+        });
+```
+
+This code did however not solve the issue of the page loading before the JavaScript, meaning that the code above wouldn't work. To fix this issue, I implemented WebDriverWait, which waited for an HTML element to appear, which containts a specific string.
+
+```java
+WebElement wait = (new WebDriverWait(driver, 10))
+           .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[contains(text(), '" + elementToWatch + "')]")));
+```
+
+
+
+
+
+
+
+
+
 
 
 
